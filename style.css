@@ -1,0 +1,108 @@
+:root {
+  --inpunt-linear: linear-gradient(120deg, #ef5590, #2b98cf);
+  --input-error: red;
+  --button-disabled: #acacac;
+  --button-sucess: #179803;
+  --button-linear: linear-gradient(120deg, #ef5590, #2b98cf, #de5086);
+}
+
+.body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.login {
+  height: 100vh;
+  background: var(--inpunt-linear);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  min-height: 400px;
+  width: 300px;
+  background-color: #ffff;
+  box-sizing: border-box;
+  padding: 32px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-title {
+  margin-bottom: 32px;
+  color: #f984b7;
+}
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login-input {
+  height: 48px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 8px;
+  border: unset; /*retira a borda*/
+}
+.login-input-border {
+  width: 1px;
+  width: 100%;
+  margin-bottom: 16px;
+  background-color: #cfcfcf;
+  transform: 0.3s ease-in-out;
+}
+.login-input-border::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 0;
+  margin-bottom: 1px;
+  background: var(--inpunt-linear);
+  transition: 0.3s ease-in-out;
+}
+.login-input:focus + .login-input-border::after {
+  width: 100%;
+}
+.login-input-border.error {
+  background: var(--input-error);
+}
+.login-submit {
+  height: 48px;
+  width: 100%;
+  outline: none;
+  background: var(--button-linear);
+  background-size: 200%;
+  margin-bottom: 32px;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-weight: bold;
+  border: unset;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+.login-submit:disabled {
+  /*vai deixar vermelhinh se nãoa atender certo o email*/
+  background: var(--button-disabled);
+  cursor: not-allowed;
+}
+.login-submit.error {
+  background: var(--input-error);
+}
+.login-submit.success {
+  background: var(--button-sucess);
+}
+.login-submit:hover {
+  background-position: right;
+}
+
+.login-reset {
+  font-size: 12px;
+  color: #b7b5b5;
+}
